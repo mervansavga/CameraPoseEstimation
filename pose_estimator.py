@@ -80,7 +80,10 @@ if __name__ == '__main__':
     focal_length, cx, cy = 100, 960, 540
     translation_12, rotation_12 = camera_pose_estimator(img1, img2, focal_length, cx, cy)
     translation_13, rotation_13 = camera_pose_estimator(img1, img3, focal_length, cx, cy)
-
+    print("Translation vector img1 and img2: \n", translation_12)
+    print("Rotation matrix img1 and img2: \n", rotation_12)
+    print("Translation vector img1 and img3: \n", translation_13)
+    print("Rotation matrix img1 and img3: \n", rotation_13)
     rotation_12 = rotation_12.transpose()
     pos_1 = np.matmul(-rotation_12,translation_12)  
     rotation_13 = rotation_13.transpose()
